@@ -1,10 +1,16 @@
 import process from 'node:process';
-import * as readline from 'node:readline/promises';
-import { stdin as input, stdout as output } from 'node:process';
 import currentPath from './currentPath.js'
 import os from 'node:os'
+import * as readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
+import goUp from './navigation.js';
+import changeDir from './changeDirectory.js';
+
+
+
+
 process.stdin.resume()
-const rl = readline.createInterface({ input, output });
+const rl = readline.createInterface({ input, output })
 
 
 
@@ -20,7 +26,15 @@ rl.on('SIGINT', ()=>{
 });
 
 rl.on('line', (input) => {
-    if(input === '.exit')
+    if(input === '.exit'){
         console.log("Thank you for using File Manager, " +process.argv[process.argv.length-1]+', goodbye!')
-    process.exit(0)
-  }); 
+        process.exit(0)
+    }
+    else if(input === 'up')
+        goUp()
+    else if(input.slice(0,2) === 'cd')
+        changeDir()
+  }
+
+
+); 
