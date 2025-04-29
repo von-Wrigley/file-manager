@@ -5,6 +5,7 @@ import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 import goUp from './navigation.js';
 import changeDir from './changeDirectory.js';
+import ls from './listOfFiles.js';
 
 
 
@@ -34,7 +35,12 @@ rl.on('line', (input) => {
         goUp()
     else if(input.slice(0,2) === 'cd')
         changeDir(input)
+
+    else if(input==='ls')
+        ls()
   }
+
+
 
 
 ); 
