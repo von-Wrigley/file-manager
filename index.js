@@ -33,7 +33,7 @@ rl.on('line', (input) => {
     else if(input === 'up')
         goUp()
     else if(input.slice(0,2) === 'cd')
-        changeDir()
+        changeDir(input)
   }
 
 
