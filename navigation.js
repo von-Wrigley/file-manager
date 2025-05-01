@@ -17,7 +17,7 @@ const goUp = ()=> {
     try {
         chdir(x);
         console.log(`New directory: ${cwd()}`);
-        currentPath(x)
+        currentPath(cwd())
       } catch (err) {
         console.error(`chdir: ${err}`);
       }

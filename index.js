@@ -12,7 +12,13 @@ import getHomedir from './SystemInfo/getHomeDir.js';
 import getUserInfo from './SystemInfo/getSysUserName.js';
 import getCPUArc from './SystemInfo/getCpuArc.js';
 import calculateHash from './calcHash.js';
-
+import createFile from './BasicOperations/createFile.js';
+import readFile from './BasicOperations/readFile.js';
+import createDir from './BasicOperations/createDirectory.js';
+import rename from './BasicOperations/renameFile.js';
+import remove from './BasicOperations/deleteFile.js';
+import copyFile from './BasicOperations/copyFile.js';
+import moveFile from './BasicOperations/moveFile.js';
 
 
 
@@ -62,6 +68,25 @@ rl.on('line', (input) => {
 
           else if(input.slice(0,4) === 'hash')
             calculateHash(input)
+
+          else if(input.slice(0,3) === 'add')
+            createFile(input)
+
+          else if(input.slice(0,3) === 'cat')
+            readFile(input)
+         
+          else if(input.slice(0,5) === 'mkdir')
+            createDir(input)
+
+          else if(input.slice(0,2) === 'rn')
+            rename(input)
+          else if(input.slice(0,2) === 'rm')
+            remove(input)
+          else if(input.slice(0,2) === 'cp')
+            copyFile(input)
+          else if(input.slice(0,2) === 'mv')
+            moveFile(input)
+
         
   }
 
