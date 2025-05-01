@@ -11,6 +11,7 @@ import getCpu from './SystemInfo/getCpu.js';
 import getHomedir from './SystemInfo/getHomeDir.js';
 import getUserInfo from './SystemInfo/getSysUserName.js';
 import getCPUArc from './SystemInfo/getCpuArc.js';
+import calculateHash from './calcHash.js';
 
 
 
@@ -59,7 +60,9 @@ rl.on('line', (input) => {
           else  if(input === 'os --architecture')
     getCPUArc()
 
-
+          else if(input.slice(0,4) === 'hash')
+            calculateHash(input)
+        
   }
 
 
