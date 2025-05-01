@@ -6,6 +6,11 @@ import { stdin as input, stdout as output } from 'node:process';
 import goUp from './navigation.js';
 import changeDir from './changeDirectory.js';
 import ls from './listOfFiles.js';
+import getEOL from './SystemInfo/getEOL.js';
+import getCpu from './SystemInfo/getCpu.js';
+import getHomedir from './SystemInfo/getHomeDir.js';
+import getUserInfo from './SystemInfo/getSysUserName.js';
+import getCPUArc from './SystemInfo/getCpuArc.js';
 
 
 
@@ -38,6 +43,23 @@ rl.on('line', (input) => {
 
     else if(input==='ls')
         ls()
+
+    else if(input === 'os --EOL')
+        getEOL()
+
+    else if(input === 'os --cpus')
+        getCpu()
+
+    else if(input === 'os --homedir')
+        getHomedir()
+
+       else if(input === 'os --username')
+        getUserInfo()
+
+          else  if(input === 'os --architecture')
+    getCPUArc()
+
+
   }
 
 
