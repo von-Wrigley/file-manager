@@ -19,6 +19,8 @@ import rename from './BasicOperations/renameFile.js';
 import remove from './BasicOperations/deleteFile.js';
 import copyFile from './BasicOperations/copyFile.js';
 import moveFile from './BasicOperations/moveFile.js';
+import compress from './(De)CompressOperations/compress.js';
+import decompress from './(De)CompressOperations/decompress.js';
 
 
 
@@ -86,7 +88,12 @@ rl.on('line', (input) => {
             copyFile(input)
           else if(input.slice(0,2) === 'mv')
             moveFile(input)
-
+       
+          else if(input.slice(0,8) === 'compress')
+            compress(input)
+      
+          else if(input.slice(0,10) === 'decompress')
+            decompress(input)
         
   }
 
