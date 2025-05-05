@@ -13,18 +13,15 @@ const x= input.replaceAll(' ', ',').split(',')
     const filePath =  x[1]
     const newfilePath =  x[2]
 
-
-     
-
          pipeline(
                 createReadStream(filePath),
                 zlib.createBrotliCompress(),
                 createWriteStream(newfilePath),
                 err => {
                     if(err){
-                        console.log('Error: ', err)
+                        console.log('Operation failed')
                     }
-                  else  console.log('success')
+                 
                   
                 }
           )

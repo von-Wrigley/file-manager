@@ -7,14 +7,14 @@ const readFile = async (input)=> {
     
     const workDirectory = process.cwd()
     const nameDir  = path.join(workDirectory, name)
- console.log("Current name: "  + name)
+ 
     try {
         const currentFile = await fs.readFile(name,  { encoding: 'utf8' })
-        console.log( "Current file: "  + currentFile)
+        console.log( currentFile)
 
         
     } catch (error) {
-        console.error(error)
+        console.error("Operation failed")
         
     }
 }

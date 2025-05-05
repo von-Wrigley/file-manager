@@ -11,7 +11,7 @@ try {
     await unlink(x)
     
 } catch (error) {
-   console.log(error)
+   console.log('Operation failed')
 }
 
 

@@ -12,14 +12,14 @@ const properPath = x[2]
      access(wrongPath || properPath, fs.constants.F_OK, err =>{
        if(err){
        
-        throw new Error('FS operation failed')
+        throw new Error('Operation failed')
        }
       
 try{   fs.rename(wrongPath, properPath);
     }
     catch(err){
         
-        throw new Error('FS operation failed')
+        throw new Error('Operation failed')
     }
        
         

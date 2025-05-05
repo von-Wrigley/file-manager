@@ -12,7 +12,7 @@ const createFile = async (input)=> {
 
         
     } catch (error) {
-        console.error(error)
+        console.error('Operation failed')
         
     }
 

@@ -94,7 +94,7 @@ rl.on('line', (input) => {
       
           else if(input.slice(0,10) === 'decompress')
             decompress(input)
-        
+        else  console.log('Invalid input')
   }
 
 

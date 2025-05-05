@@ -6,7 +6,7 @@ const createDir = async(input)=> {
     try {
       fs.mkdir(name)
     } catch (error) {
-        console.error(error);
+        console.error('Operation failed');
     }
 
 }

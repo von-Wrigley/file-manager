@@ -19,9 +19,9 @@ const decompress = async (input) => {
                     createWriteStream(newfilePath),
                     err => {
                         if(err){
-                            console.log('Error: ', err)
+                            console.log('Operation failed')
                         }
-                      else  console.log('success')
+                     
                       
                     }
               )
