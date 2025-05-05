@@ -6,9 +6,10 @@ const createFile = async (input)=> {
     const name = input.slice(3).trim()
     const workDirectory = process.cwd()
     const nameDir  = path.join(workDirectory, name)
-    console.log(nameDir)
+   
     try {
                 await  fs.writeFile(nameDir, '', { flag: 'wx' })
+                console.log('You are currently in ' + process.cwd())
 
         
     } catch (error) {

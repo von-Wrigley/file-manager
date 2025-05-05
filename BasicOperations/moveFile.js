@@ -4,6 +4,8 @@ import { createReadStream, createWriteStream } from 'node:fs'
 import fs from 'node:fs/promises'
 import { pipeline } from 'node:stream/promises'
 import path from 'node:path'
+import process from 'node:process';
+
 
 const moveFile = async (input)=> {
   
@@ -23,7 +25,7 @@ const moveFile = async (input)=> {
     createWriteStream(pathToNewDir2)
 )
 await fs.unlink(pathToFile)
-
+console.log('You are currently in ' + process.cwd())
   
  } 
  

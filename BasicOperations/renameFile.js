@@ -1,6 +1,6 @@
 import { access } from 'node:fs';
 import fs from 'fs/promises';
-
+import process from 'node:process';
 
 const rename = async (input) => {
 
@@ -16,6 +16,7 @@ const properPath = x[2]
        }
       
 try{   fs.rename(wrongPath, properPath);
+    console.log('You are currently in ' + process.cwd())
     }
     catch(err){
         

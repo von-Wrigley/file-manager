@@ -1,5 +1,5 @@
 
-
+import process from 'node:process';
 import { createReadStream, createWriteStream } from 'node:fs'
 import { pipeline } from 'node:stream/promises'
 import path from 'node:path'
@@ -20,6 +20,7 @@ const copyFile = async (input)=> {
     createReadStream(pathToFile),
     createWriteStream(pathToNewDir2)
 )
+console.log('You are currently in ' + process.cwd())
     
  } catch (error) {
     console.log('Error: ', error)

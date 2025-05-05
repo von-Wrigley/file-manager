@@ -21,6 +21,7 @@ import copyFile from './BasicOperations/copyFile.js';
 import moveFile from './BasicOperations/moveFile.js';
 import compress from './(De)CompressOperations/compress.js';
 import decompress from './(De)CompressOperations/decompress.js';
+import help from './help.js';
 
 
 
@@ -30,6 +31,7 @@ const rl = readline.createInterface({ input, output })
 
 
 console.log("Welcome to the File Manager, "+ process.argv[process.argv.length-1] + '!' )
+console.log("Press 'help' to show you all commands")
 const workDirectory = process.cwd()
 const hoeDirectory = os.homedir()
 
@@ -49,6 +51,8 @@ rl.on('line', (input) => {
         goUp()
     else if(input.slice(0,2) === 'cd')
         changeDir(input)
+    else if(input === 'help')
+      help()
 
     else if(input==='ls')
         ls()

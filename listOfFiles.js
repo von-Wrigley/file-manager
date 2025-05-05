@@ -1,5 +1,5 @@
 import { readdir } from 'fs/promises';
-
+import process from 'process';
 
 const ls =async ()=> {
     try {
@@ -33,10 +33,10 @@ const q = arr.map((item, index) => ({
     'name': item,
     'type': arr2[index]
   }))
-
+       console.log('You are currently in ' + process.cwd())
        console.table(q)
       } catch (err) {
-          console.log(err);}
+          console.log('Operation failed');}
       
 
 }

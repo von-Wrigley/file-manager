@@ -19,12 +19,11 @@ const goUp = ()=> {
 
      
         chdir(parentDir);
-        // console.log(`New directory: ${cwd()}`);
-//  console.log("root: ", parentDir)
+     
  console.log("workDirectory: ", workDirectory)
         // currentPath(cwd())
       } catch (err) {
-        console.error(`chdir: ${err}`);
+        console.error('Operation failed');
       }
 }
 

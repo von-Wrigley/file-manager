@@ -4,7 +4,7 @@ import {
     createWriteStream,
   } from 'node:fs';
   import { pipeline } from 'stream'
-
+  import process from 'node:process'
 const decompress = async (input) => {
     const x= input.replaceAll(' ', ',').split(',')
     
@@ -12,7 +12,7 @@ const decompress = async (input) => {
         const filePath =  x[1]
         const newfilePath =  x[2]
     
-    
+        console.log('You are currently in ' + process.cwd()) 
              pipeline(
                     createReadStream(filePath),
                     zlib.createBrotliDecompress(),
